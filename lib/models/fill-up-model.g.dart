@@ -8,7 +8,7 @@ part of 'fill-up-model.dart';
 
 class FillUpModelAdapter extends TypeAdapter<FillUpModel> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   FillUpModel read(BinaryReader reader) {

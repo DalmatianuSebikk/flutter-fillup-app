@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'fill-up-model.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class FillUpModel extends HiveObject {
   @HiveField(0)
   final String nrMasina;
