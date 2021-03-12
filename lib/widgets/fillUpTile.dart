@@ -30,7 +30,7 @@ class FillUpTile extends StatelessWidget {
               ),
             ),
             subtitle: Text(
-              currentFillUp?.sumaAlimentata.toString() ?? "",
+              (currentFillUp?.sumaAlimentata.toString() ?? "") + " RON",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 15.0,

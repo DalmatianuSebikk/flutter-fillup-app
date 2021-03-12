@@ -60,103 +60,106 @@ class _FillUpAddState extends State<FillUpAdd> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            TextField(
-              autofocus: true,
-              decoration: InputDecoration(hintText: "Numar masina"),
-              onChanged: (v) {
-                setState(
-                  () {
-                    _nrMasina = v;
-                  },
-                );
-              },
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            RadioListTile(
-              title: const Text('Benzina'),
-              value: Combustibil.benzina,
-              groupValue: _valoare,
-              onChanged: (Combustibil value) {
-                setState(() {
-                  _valoare = value;
-                });
-              },
-            ),
-            RadioListTile(
-              title: const Text('Motorina'),
-              value: Combustibil.motorina,
-              groupValue: _valoare,
-              onChanged: (Combustibil value) {
-                setState(() {
-                  _valoare = value;
-                });
-              },
-            ),
-            // TextField(
-            //   autofocus: true,
-            //   decoration: InputDecoration(hintText: "Combustibil"),
-            //   onChanged: (v) {
-            //     setState(
-            //       () {
-            //         combustibil = v;
-            //       },
-            //     );
-            //   },
-            // ),
+          padding: EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  TextField(
+                    autofocus: true,
+                    decoration: InputDecoration(hintText: "Numar masina"),
+                    onChanged: (v) {
+                      setState(
+                        () {
+                          _nrMasina = v;
+                        },
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  RadioListTile(
+                    title: const Text('Benzina'),
+                    value: Combustibil.benzina,
+                    groupValue: _valoare,
+                    onChanged: (Combustibil value) {
+                      setState(() {
+                        _valoare = value;
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    title: const Text('Motorina'),
+                    value: Combustibil.motorina,
+                    groupValue: _valoare,
+                    onChanged: (Combustibil value) {
+                      setState(() {
+                        _valoare = value;
+                      });
+                    },
+                  ),
+                  // TextField(
+                  //   autofocus: true,
+                  //   decoration: InputDecoration(hintText: "Combustibil"),
+                  //   onChanged: (v) {
+                  //     setState(
+                  //       () {
+                  //         combustibil = v;
+                  //       },
+                  //     );
+                  //   },
+                  // ),
 
-            SizedBox(
-              height: 10.0,
-            ),
-            TextField(
-              autofocus: true,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(hintText: "Kilometri Bord"),
-              onChanged: (v) {
-                setState(
-                  () {
-                    _kmBord = v;
-                    print(_kmBord);
-                  },
-                );
-              },
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextField(
-              autofocus: true,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(hintText: "Suma alimentata"),
-              onChanged: (v) {
-                setState(
-                  () {
-                    _sumaAlimentata = v;
-                    print(_sumaAlimentata);
-                  },
-                );
-              },
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.save,
-                color: Colors.blue,
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  TextField(
+                    autofocus: true,
+                    keyboardType: TextInputType.numberWithOptions(),
+                    decoration: InputDecoration(hintText: "Kilometri Bord"),
+                    onChanged: (v) {
+                      setState(
+                        () {
+                          _kmBord = v;
+                          print(_kmBord);
+                        },
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  TextField(
+                    autofocus: true,
+                    keyboardType: TextInputType.numberWithOptions(),
+                    decoration: InputDecoration(hintText: "Suma alimentata"),
+                    onChanged: (v) {
+                      setState(
+                        () {
+                          _sumaAlimentata = v;
+                          print(_sumaAlimentata);
+                        },
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.save,
+                      color: Colors.blue,
+                    ),
+                    onPressed: () {
+                      _addFillUp(context);
+                    },
+                  )
+                ],
               ),
-              onPressed: () {
-                _addFillUp(context);
-              },
-            )
-          ],
-        ),
-      ),
+            ],
+          )),
     );
   }
 }

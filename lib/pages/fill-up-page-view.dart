@@ -230,7 +230,7 @@ class FillUpView extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        currentFillUp.sumaAlimentata.toString(),
+                        currentFillUp.sumaAlimentata.toString() + " RON",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16.0,
